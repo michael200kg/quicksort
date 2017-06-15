@@ -1,28 +1,27 @@
 package com.epam.quicksort;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class Main {
-	public static int[] array = new int[10];
+
 	public static void main(String ... args) {
-	   fill();
-	   print();
+	   final int ARRAY_SIZE = 20;
+	   final int RANGE = 200;
+	   int[] array = new int[ARRAY_SIZE];
+	   fill(array,RANGE);
+	   print(array);
 	   new QuickSort(array);
-	   print();
+	   print(array);
    }
    
-   public static void print() {
-	   for(int arr: array) {
-		   System.out.print(arr+" ");
-	   }
+   public static void print(int[] array) {
+	   Arrays.stream(array).forEach(arr->System.out.print(arr+" "));
 	   System.out.println("");
    }
-   public static void fill() {
-	   Random rand = new Random();
-	   for(int i=0;i<array.length;i++) {
-		   array[i]=rand.nextInt(100);
-	   }
-	  
+   public static void fill(int[] array, int range) {   
+	   IntStream.range(0, array.length).forEach(i->array[i]=(new Random()).nextInt(range));
    }
    
 }
