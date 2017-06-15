@@ -41,6 +41,7 @@ public class QuickSort {
     			current=i;
     		}
     	}
+    	
     	sort(begin,current);
     	sort(current+1,end);
     }
