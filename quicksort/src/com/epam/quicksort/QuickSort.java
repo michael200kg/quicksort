@@ -12,9 +12,11 @@ public class QuickSort {
 	}
 	
 	public void sort(int begin, int end) {
-        if (begin >= end)
+        
+		if (begin >= end) {
             return;
-    	
+        }
+        
         int i = begin;
     	int j = end;
     	int current = i - (i - j) / 2;
