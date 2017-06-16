@@ -44,5 +44,6 @@ public class QuickSort {
     	
     	sort(begin,current);
     	sort(current+1,end);
+    	
     }
 }
